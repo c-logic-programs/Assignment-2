@@ -1,30 +1,32 @@
 /*
-1.Write a program which accept one number from user and print that number of
-even numbers on screen.
-Input : 7
-Output: 2
+2. Write a program which accept number from user and print factors of that
+number.
+Input : 24
+Output: 
+1
+2
 4
 6
 8
-10
 12
-14
 */
 
 #include<stdio.h>
 
-void PrintEven(int iNo)
+void DisplayFactor(int iNo)
 {
 	if(iNo <= 0)
 	{
-		return;
+		iNo = -iNo;
 	}
 	
-	int iCnt = 0;
-	for(int i = 0; i < iNo; i++)
+	
+	for(int i = 1; i <= iNo/2; i++)
 	{
-		iCnt += 2;
-		printf("%d \t",iCnt);
+		if(iNo % i == 0)
+		{
+			printf("%d \t",i);
+		}
 	}
 }
 
@@ -35,6 +37,6 @@ int main()
 	printf("Enter the number\n");
 	scanf("%d",&iNo);
 
-	PrintEven(iNo);
+	DisplayFactor(iNo);
 	return 0;
 }
